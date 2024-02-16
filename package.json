@@ -6,14 +6,17 @@
   "author": "moraiskaua <moraiskaua03@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "nodemon src/index.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^8.56.0",
+    "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
