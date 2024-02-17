@@ -28,9 +28,9 @@ export const Order = model(
             type: Number,
             default: 1,
           },
-          required: true,
         },
       ],
+      required: true,
     },
   }),
 );
