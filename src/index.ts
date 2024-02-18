@@ -8,6 +8,15 @@ mongoose
   .then(() => {
     const app = express();
 
+    app.use((req, res) => {
+      res.setHeader(
+        'Access-Control-Allow-Origin',
+        process.env.FRONT_END_URL as string,
+      );
+      res.setHeader('Access-Control-Allow-Methods', '*');
+      res.setHeader('Access-Control-Allow-Headers', '*');
+    });
+
     app.use(
       '/uploads',
       express.static(path.resolve(__dirname, '..', 'uploads')),
