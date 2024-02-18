@@ -11,7 +11,7 @@ const server = http.createServer(app);
 export const io = new Server(server);
 
 mongoose
-  .connect('mongodb://localhost:27017/SnackByte')
+  .connect(process.env.DATABASE_URL as string)
   .then(() => {
     app.use((req, res, next) => {
       res.setHeader(
