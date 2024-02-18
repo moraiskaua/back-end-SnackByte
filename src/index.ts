@@ -2,6 +2,7 @@ import path from 'node:path';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './router';
+import 'dotenv/config';
 
 mongoose
   .connect('mongodb://localhost:27017/SnackByte')
