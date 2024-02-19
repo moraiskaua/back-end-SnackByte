@@ -1,14 +1,10 @@
 import path from 'node:path';
-import http from 'node:http';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './router';
 import 'dotenv/config';
-import { Server } from 'socket.io';
 
 const app = express();
-const server = http.createServer(app);
-export const io = new Server(server);
 
 mongoose
   .connect(process.env.DATABASE_URL as string)
@@ -32,6 +28,6 @@ mongoose
     app.use(express.json());
     app.use(router);
 
-    server.listen(8080, () => console.log('🚀 Server is running'));
+    app.listen(8080, () => console.log('🚀 Server is running'));
   })
   .catch(() => console.log('❌ Connection error'));
